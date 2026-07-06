@@ -1,0 +1,66 @@
+/* ============================================================
+   MITRA AI — DESIGN TOKENS
+   Palette: "twilight companion" — a warm plum dusk instead of
+   flat dev-tool black, with an ember/bloom duo standing in for
+   the single neon accent. The Ember Thread (a slow, breathing
+   gradient line) is the signature motif carried through every
+   page: hero, dividers, the chat "listening" state.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,440;0,9..144,560;1,9..144,440;1,9..144,560&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root{
+    /* surfaces */
+    --void:        #17121F;   /* app background */
+    --dusk:        #211A2B;   /* panels / sidebar */
+    --dusk-2:      #2B2236;   /* raised cards, inputs */
+    --dusk-3:      #362A44;   /* hover / borders-strong */
+    --line:        rgba(245,239,230,0.09);
+
+    /* accents */
+    --ember:       #F3A559;   /* primary — warm amber */
+    --ember-deep:  #E07F3E;   /* primary, pressed/deep */
+    --bloom:       #E888A3;   /* secondary — dusty rose */
+    --bloom-deep:  #D8657F;
+
+    /* text */
+    --paper:       #F6F0E8;   /* primary text on dark */
+    --mist:        #A79BB8;   /* secondary text, lavender-grey */
+    --mist-dim:    #6F6480;   /* tertiary / placeholders */
+
+    /* gradients */
+    --grad-thread: linear-gradient(90deg, var(--ember) 0%, var(--bloom) 100%);
+    --grad-panel:  radial-gradient(120% 140% at 20% 0%, #3A2A44 0%, #201827 60%, #150F1C 100%);
+
+    /* type */
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono:    'IBM Plex Mono', ui-monospace, monospace;
+
+    /* shape / motion */
+    --radius-sm:  10px;
+    --radius-md:  16px;
+    --radius-lg:  26px;
+    --ease: cubic-bezier(.22,.61,.36,1);
+}
+
+@media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+*{ box-sizing: border-box; }
+
+::selection{ background: var(--ember); color: var(--void); }
+
+::-webkit-scrollbar{ width: 10px; height: 10px; }
+::-webkit-scrollbar-track{ background: transparent; }
+::-webkit-scrollbar-thumb{ background: var(--dusk-3); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover{ background: var(--mist-dim); }
+
+a{ color: inherit; }
+
+:focus-visible{
+    outline: 2px solid var(--ember);
+    outline-offset: 3px;
+    border-radius: 6px;
+}

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Mitra AI</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/dashboard.css') }}"
+    />
+  </head>
+
+  <body>
+    <div id="overlay" class="overlay"></div>
+    <div class="app">
+      <aside class="sidebar" id="sidebar">
+        <h2>Mitra</h2>
+
+        <button class="new-chat" id="new-chat-btn">+ New chat</button>
+
+        <div class="history">
+          <h3>History</h3>
+
+          <div id="chat-list"></div>
+        </div>
+
+        <div class="bottom">
+          <a href="/logout">Log out</a>
+        </div>
+      </aside>
+
+      <main class="chat">
+        <header>
+          <button id="menu-btn" class="menu-btn">☰</button>
+
+          <div>
+            <h2>Mitra AI</h2>
+
+            <p>Here for you.</p>
+          </div>
+
+          <div class="profile" id="profile-btn">
+
+    <img
+        src="{{ current_user.profile_picture or url_for('static', filename='images/default-avatar.png') }}"
+        class="profile-pic"
+    >
+
+    <div class="profile-menu" id="profile-menu">
+
+        <a href="/logout">
+            🚪 Logout
+        </a>
+
+    </div>
+
+</div>
+        </header>
+        <div id="messages" class="messages">
+          <div class="welcome">
+            <h1>Welcome 👋</h1>
+            <p>Start a conversation with Mitra.</p>
+
+            <div class="suggestions">
+              <button type="button" class="suggestion">
+                Help me think through a decision
+              </button>
+              <button type="button" class="suggestion">
+                Explain something simply
+              </button>
+              <button type="button" class="suggestion">
+                Generate an image
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="input">
+          <button id="attach" aria-label="Attach file">📎</button>
+
+          <input
+            id="message"
+            placeholder="Message Mitra..."
+            autocomplete="off"
+          />
+
+          <button id="send" aria-label="Send message">➜</button>
+        </div>
+      </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+  </body>
+</html>

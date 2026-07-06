@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings • Mitra AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/settings.css') }}">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+
+        <h2>Mitra</h2>
+
+        <nav>
+            <a href="/dashboard">Chat</a>
+            <a href="/settings" class="active">Settings</a>
+        </nav>
+
+        <div class="bottom">
+            <a href="/logout">Log out</a>
+        </div>
+
+    </aside>
+
+    <main class="settings-main">
+
+        <h1>Settings</h1>
+        <p class="sub">Manage your account and how Mitra responds to you.</p>
+
+        <form action="/settings" method="POST">
+
+            <div class="section">
+                <h2>Profile</h2>
+                <p class="desc">This is how Mitra will address you.</p>
+
+                <div class="field-inline">
+                    <label for="username">Username</label>
+                    <input id="username" type="text" name="username" placeholder="yourname">
+                </div>
+
+                <div class="field-inline">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" name="email" placeholder="you@example.com">
+                </div>
+
+                <button type="submit" class="save">Save changes</button>
+            </div>
+
+            <div class="section">
+                <h2>Default thinking mode</h2>
+                <p class="desc">Choose how Mitra responds by default — you can still switch mid-conversation.</p>
+
+                <div class="model-options">
+
+                    <label class="model-option selected">
+                        <input type="radio" name="model" value="mitra" checked>
+                        <span class="name">Mitra</span>
+                        <span class="hint">Balanced, everyday conversation</span>
+                    </label>
+
+                    <label class="model-option">
+                        <input type="radio" name="model" value="deep">
+                        <span class="name">Deep</span>
+                        <span class="hint">Slower, more thorough thinking</span>
+                    </label>
+
+                    <label class="model-option">
+                        <input type="radio" name="model" value="lite">
+                        <span class="name">Lite</span>
+                        <span class="hint">Fast, lightweight replies</span>
+                    </label>
+
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Notifications</h2>
+                <p class="desc">Let Mitra reach out when it matters.</p>
+
+                <div class="row">
+                    <div class="label">
+                        Email summaries
+                        <span class="hint">A weekly recap of your conversations</span>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" name="email_summaries" checked>
+                        <span class="track"></span>
+                    </label>
+                </div>
+
+                <div class="row">
+                    <div class="label">
+                        Product updates
+                        <span class="hint">New features and improvements</span>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" name="product_updates">
+                        <span class="track"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="section danger-zone">
+                <h2>Danger zone</h2>
+                <p class="desc">This can't be undone.</p>
+                <button type="button" class="danger">Delete account</button>
+            </div>
+
+        </form>
+
+    </main>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/settings.js') }}"></script>
+
+</body>
+
+</html>

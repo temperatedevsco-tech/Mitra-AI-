@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mitra AI — Your thoughtful AI companion</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">Mitra</div>
+
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+            <a href="#pricing">Pricing</a>
+            <a href="/login">Log in</a>
+            <a href="/register" class="nav-cta">Get started</a>
+        </div>
+
+    </nav>
+
+    <main class="hero">
+
+        <span class="eyebrow">A companion, not a tool</span>
+
+        <h1>Think out loud.<br><em>Mitra listens.</em></h1>
+
+        <p class="lede">
+            A quiet place to work through ideas, questions, and the
+            thoughts that show up at 3am — with an AI that stays
+            with the conversation, not just the prompt.
+        </p>
+
+        <svg class="thread" viewBox="0 0 340 46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+                <linearGradient id="threadGrad" x1="0" y1="0" x2="340" y2="0" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#F3A559"/>
+                    <stop offset="1" stop-color="#E888A3"/>
+                </linearGradient>
+            </defs>
+            <path d="M2 23C40 4, 80 42, 120 23S200 4, 240 23S300 42, 338 23"
+                  stroke="url(#threadGrad)" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+
+        <div class="hero-buttons">
+            <a href="/register" class="primary-btn">Start talking</a>
+            <a href="/login" class="secondary-btn">Sign in</a>
+        </div>
+
+    </main>
+
+    <section class="features" id="features">
+
+        <div class="feature-card">
+            <div class="icon">⚡</div>
+            <h3>Fast, considered replies</h3>
+            <p>Powered by several state-of-the-art models chosen to fit
+               the moment, not just one default.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">🧠</div>
+            <h3>Choose how deep to go</h3>
+            <p>Switch between Mitra, Deep, and Lite whenever a
+               conversation needs more — or less — thought.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">🎨</div>
+            <h3>Say it, see it</h3>
+            <p>Turn a description into a high-quality image without
+               leaving the conversation.</p>
+        </div>
+
+    </section>
+
+    <footer>
+        Made with care by TemperateDevs
+    </footer>
+
+</body>
+
+</html>
